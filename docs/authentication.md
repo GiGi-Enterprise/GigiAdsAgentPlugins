@@ -42,8 +42,8 @@ issuer, token database, and MCP endpoint. Run `python3 scripts/sync_endpoint.py
 --check` to detect drift, or update the config and run
 `python3 scripts/sync_endpoint.py` to regenerate all six host manifests.
 
-Staging and pre-prod use their assigned AWS API Gateway origins and are
-distributed only through GitHub. Production uses
+Alpha targets staging and Beta targets pre-prod. They use their assigned AWS
+API Gateway origins and are distributed only through GitHub. Production uses
 `https://agent.gigico.tv/mcp` and is the only environment submitted to OpenAI or
 Claude. Pending non-production hosts use the reserved `.invalid` domain so they
 cannot accidentally connect to production.

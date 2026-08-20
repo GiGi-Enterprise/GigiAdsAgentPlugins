@@ -15,13 +15,13 @@ ROOT = Path(__file__).resolve().parents[1]
 ENVIRONMENTS = ("staging", "preprod", "prod")
 EXPECTED = {
     "staging": {
-        "pluginId": "gigi-ads-agent-staging",
-        "displayName": "Gigi-Ads-Agent (Staging)",
+        "pluginId": "gigi-ads-agent-alpha",
+        "displayName": "Gigi-Ads-Agent (Alpha)",
         "marketplaceSubmission": False,
     },
     "preprod": {
-        "pluginId": "gigi-ads-agent-preprod",
-        "displayName": "Gigi-Ads-Agent (Pre-Prod)",
+        "pluginId": "gigi-ads-agent-beta",
+        "displayName": "Gigi-Ads-Agent (Beta)",
         "marketplaceSubmission": False,
     },
     "prod": {
@@ -205,8 +205,8 @@ def validate(*, release: bool = False, environment: str = "prod") -> None:
         "Choose **Connect**",
         "do not clone this repository",
         "exact OAuth redirect URI",
-        "gigi-ads-agent-staging",
-        "gigi-ads-agent-preprod",
+        "gigi-ads-agent-alpha",
+        "gigi-ads-agent-beta",
         "https://agent.gigico.tv/mcp",
         "Only `gigi-ads-agent` is submitted",
     ):

@@ -7,8 +7,8 @@ credentials.
 
 | Environment | Package IDs | Distribution |
 |---|---|---|
-| Staging | `gigi-ads-agent-staging` | Public GitHub repository only |
-| Pre-Prod | `gigi-ads-agent-preprod` | Public GitHub repository only |
+| Alpha (Staging) | `gigi-ads-agent-alpha` | Public GitHub repository only |
+| Beta (Pre-Prod) | `gigi-ads-agent-beta` | Public GitHub repository only |
 | Production | `gigi-ads-agent` | GitHub plus OpenAI and Claude marketplaces after approval |
 
 The packages intentionally use separate roots so host-specific manifests do
@@ -16,7 +16,7 @@ not conflict. Both connect to the endpoint defined in
 [`config/environments.json`](config/environments.json) and rely on standard
 OAuth discovery. Users never copy or paste service tokens. Non-production
 endpoints remain deliberately non-routable until their API Gateways exist, so a
-staging or pre-prod package can never silently fall through to production.
+Alpha or Beta package can never silently fall through to production.
 
 Only the production package is submitted to OpenAI or Claude. After OpenAI
 approval and publication, ChatGPT users install

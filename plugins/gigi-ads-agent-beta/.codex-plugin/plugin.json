@@ -1,0 +1,31 @@
+{
+  "name": "gigi-ads-agent-beta",
+  "version": "0.1.0",
+  "description": "Use the non-production Gigi Beta environment from Codex.",
+  "author": {
+    "name": "GiGi Enterprise",
+    "url": "https://gigico.ai/"
+  },
+  "homepage": "https://gigico.ai/",
+  "license": "LicenseRef-Proprietary",
+  "keywords": ["advertising", "amazon-dsp", "campaigns", "gigi", "beta", "preprod"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Gigi-Ads-Agent (Beta)",
+    "shortDescription": "Verify Gigi advertising workflows in Beta.",
+    "longDescription": "Access the isolated Gigi Beta pre-prod service for release-candidate testing of tasks, feed cards, advertiser context, knowledge, metrics, and campaign intake.",
+    "developerName": "GiGi Enterprise",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "websiteURL": "https://gigico.ai/",
+    "privacyPolicyURL": "https://gigico.ai/privacy",
+    "termsOfServiceURL": "https://gigico.ai/terms",
+    "defaultPrompt": [
+      "Show my most important Beta feed cards.",
+      "Chart Beta spend and impressions for this advertiser.",
+      "Start a Beta campaign intake draft."
+    ],
+    "brandColor": "#176B48"
+  },
+  "mcpServers": "./.mcp.json"
+}

@@ -49,18 +49,18 @@ checkout is required.
 
 ### Local or private testing
 
-The public GitHub repository is also the staging and pre-prod distribution
+The public GitHub repository is also the Alpha/staging and Beta/pre-prod distribution
 surface. Add it as a repository marketplace, then run exactly one of the three
 install commands for the intended environment:
 
 ```bash
 codex plugin marketplace add GiGi-Enterprise/GigiAdsAgentPlugins
 
-# Staging
-codex plugin add gigi-ads-agent-staging@gigi-ads-agent
+# Alpha (Staging)
+codex plugin add gigi-ads-agent-alpha@gigi-ads-agent
 
-# Pre-Prod
-codex plugin add gigi-ads-agent-preprod@gigi-ads-agent
+# Beta (Pre-Prod)
+codex plugin add gigi-ads-agent-beta@gigi-ads-agent
 
 # Production
 codex plugin add gigi-ads-agent@gigi-ads-agent
@@ -99,11 +99,11 @@ environment-specific install command:
 ```bash
 claude plugin marketplace add GiGi-Enterprise/GigiAdsAgentPlugins
 
-# Staging
-claude plugin install gigi-ads-agent-staging@gigi-ads-agent
+# Alpha (Staging)
+claude plugin install gigi-ads-agent-alpha@gigi-ads-agent
 
-# Pre-Prod
-claude plugin install gigi-ads-agent-preprod@gigi-ads-agent
+# Beta (Pre-Prod)
+claude plugin install gigi-ads-agent-beta@gigi-ads-agent
 
 # Production
 claude plugin install gigi-ads-agent@gigi-ads-agent
@@ -113,6 +113,6 @@ After installation, start a new Claude Code session. Invoke a Gigi tool and use
 `/mcp` to complete OAuth when prompted.
 
 Only `gigi-ads-agent` is submitted to Anthropic's public marketplace. The
-staging and pre-prod entries remain available only when a user explicitly adds
+Alpha and Beta entries remain available only when a user explicitly adds
 Gigi's GitHub repository marketplace. Do not use a pending non-production
 package until its API Gateway endpoint and OAuth flow are operational.

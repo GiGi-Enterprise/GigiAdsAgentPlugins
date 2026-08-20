@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "gigi-ads-agent-preprod": {
-      "type": "http",
-      "url": "https://preprod-agent.not-deployed.invalid/mcp"
-    }
-  }
-}

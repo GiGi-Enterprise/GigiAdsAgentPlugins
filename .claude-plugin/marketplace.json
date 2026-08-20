@@ -16,18 +16,18 @@
       "category": "business"
     },
     {
-      "name": "gigi-ads-agent-staging",
-      "displayName": "Gigi-Ads-Agent (Staging)",
-      "source": "./claude-plugins/gigi-ads-agent-staging",
-      "description": "Test Gigi advertising workflows in staging.",
+      "name": "gigi-ads-agent-alpha",
+      "displayName": "Gigi-Ads-Agent (Alpha)",
+      "source": "./claude-plugins/gigi-ads-agent-alpha",
+      "description": "Test Gigi advertising workflows in Alpha/staging.",
       "version": "0.1.0",
       "category": "business"
     },
     {
-      "name": "gigi-ads-agent-preprod",
-      "displayName": "Gigi-Ads-Agent (Pre-Prod)",
-      "source": "./claude-plugins/gigi-ads-agent-preprod",
-      "description": "Verify Gigi advertising workflows before production.",
+      "name": "gigi-ads-agent-beta",
+      "displayName": "Gigi-Ads-Agent (Beta)",
+      "source": "./claude-plugins/gigi-ads-agent-beta",
+      "description": "Verify Gigi advertising workflows in Beta/pre-prod.",
       "version": "0.1.0",
       "category": "business"
     }

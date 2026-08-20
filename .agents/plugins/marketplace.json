@@ -17,10 +17,10 @@
       "category": "Productivity"
     },
     {
-      "name": "gigi-ads-agent-staging",
+      "name": "gigi-ads-agent-alpha",
       "source": {
         "source": "local",
-        "path": "./plugins/gigi-ads-agent-staging"
+        "path": "./plugins/gigi-ads-agent-alpha"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -29,10 +29,10 @@
       "category": "Productivity"
     },
     {
-      "name": "gigi-ads-agent-preprod",
+      "name": "gigi-ads-agent-beta",
       "source": {
         "source": "local",
-        "path": "./plugins/gigi-ads-agent-preprod"
+        "path": "./plugins/gigi-ads-agent-beta"
       },
       "policy": {
         "installation": "AVAILABLE",

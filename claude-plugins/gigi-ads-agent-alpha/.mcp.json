@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "gigi-ads-agent-alpha": {
+      "type": "http",
+      "url": "https://staging-agent.not-deployed.invalid/mcp"
+    }
+  }
+}

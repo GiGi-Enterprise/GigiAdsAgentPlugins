@@ -1,0 +1,14 @@
+{
+  "name": "gigi-ads-agent-beta",
+  "displayName": "Gigi-Ads-Agent (Beta)",
+  "version": "0.1.0",
+  "description": "Verify scoped Gigi advertising workflows in the non-production Beta pre-prod environment.",
+  "author": {
+    "name": "GiGi Enterprise",
+    "url": "https://gigico.ai/"
+  },
+  "homepage": "https://gigico.ai/",
+  "license": "LicenseRef-Proprietary",
+  "keywords": ["advertising", "amazon-dsp", "campaigns", "gigi", "beta", "preprod"],
+  "mcpServers": "./.mcp.json"
+}
