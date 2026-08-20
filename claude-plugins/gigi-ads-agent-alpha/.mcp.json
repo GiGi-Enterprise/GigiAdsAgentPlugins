@@ -2,7 +2,7 @@
   "mcpServers": {
     "gigi-ads-agent-alpha": {
       "type": "http",
-      "url": "https://staging-agent.not-deployed.invalid/mcp"
+      "url": "https://6g8ljo2iy3.execute-api.us-east-1.amazonaws.com/mcp"
     }
   }
 }

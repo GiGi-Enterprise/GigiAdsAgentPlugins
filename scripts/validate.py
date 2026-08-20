@@ -30,7 +30,11 @@ EXPECTED = {
         "marketplaceSubmission": True,
     },
 }
-SEMVER = re.compile(r"^\d+\.\d+\.\d+$")
+SEMVER = re.compile(
+    r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)"
+    r"(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?"
+    r"(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$"
+)
 EXECUTE_API_HOST = re.compile(r"^[a-z0-9]+\.execute-api\.us-east-1\.amazonaws\.com$")
 
 
