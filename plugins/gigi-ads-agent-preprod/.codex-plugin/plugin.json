@@ -1,0 +1,31 @@
+{
+  "name": "gigi-ads-agent-preprod",
+  "version": "0.1.0",
+  "description": "Use the non-production Gigi pre-prod environment from Codex.",
+  "author": {
+    "name": "GiGi Enterprise",
+    "url": "https://gigico.ai/"
+  },
+  "homepage": "https://gigico.ai/",
+  "license": "LicenseRef-Proprietary",
+  "keywords": ["advertising", "amazon-dsp", "campaigns", "gigi", "preprod"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Gigi-Ads-Agent (Pre-Prod)",
+    "shortDescription": "Verify Gigi advertising workflows before production.",
+    "longDescription": "Access the isolated Gigi pre-prod service for release-candidate testing of tasks, feed cards, advertiser context, knowledge, metrics, and campaign intake.",
+    "developerName": "GiGi Enterprise",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "websiteURL": "https://gigico.ai/",
+    "privacyPolicyURL": "https://gigico.ai/privacy",
+    "termsOfServiceURL": "https://gigico.ai/terms",
+    "defaultPrompt": [
+      "Show my most important pre-prod feed cards.",
+      "Chart pre-prod spend and impressions for this advertiser.",
+      "Start a pre-prod campaign intake draft."
+    ],
+    "brandColor": "#176B48"
+  },
+  "mcpServers": "./.mcp.json"
+}

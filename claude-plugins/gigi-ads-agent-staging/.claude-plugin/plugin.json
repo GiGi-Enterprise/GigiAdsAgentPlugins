@@ -1,0 +1,14 @@
+{
+  "name": "gigi-ads-agent-staging",
+  "displayName": "Gigi-Ads-Agent (Staging)",
+  "version": "0.1.0",
+  "description": "Test scoped Gigi advertising workflows in the non-production staging environment.",
+  "author": {
+    "name": "GiGi Enterprise",
+    "url": "https://gigico.ai/"
+  },
+  "homepage": "https://gigico.ai/",
+  "license": "LicenseRef-Proprietary",
+  "keywords": ["advertising", "amazon-dsp", "campaigns", "gigi", "staging"],
+  "mcpServers": "./.mcp.json"
+}

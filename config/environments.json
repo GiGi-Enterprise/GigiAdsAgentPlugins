@@ -1,0 +1,26 @@
+{
+  "staging": {
+    "pluginId": "gigi-ads-agent-staging",
+    "displayName": "Gigi-Ads-Agent (Staging)",
+    "mcp": "https://staging-agent.not-deployed.invalid/mcp",
+    "endpointStatus": "pending",
+    "distribution": ["github"],
+    "marketplaceSubmission": false
+  },
+  "preprod": {
+    "pluginId": "gigi-ads-agent-preprod",
+    "displayName": "Gigi-Ads-Agent (Pre-Prod)",
+    "mcp": "https://preprod-agent.not-deployed.invalid/mcp",
+    "endpointStatus": "pending",
+    "distribution": ["github"],
+    "marketplaceSubmission": false
+  },
+  "prod": {
+    "pluginId": "gigi-ads-agent",
+    "displayName": "Gigi-Ads-Agent",
+    "mcp": "https://agent.gigico.tv/mcp",
+    "endpointStatus": "planned",
+    "distribution": ["github", "openai", "claude"],
+    "marketplaceSubmission": true
+  }
+}

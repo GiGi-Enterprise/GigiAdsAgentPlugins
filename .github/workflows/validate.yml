@@ -1,0 +1,30 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  plugins:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: python3 scripts/sync_endpoint.py --check
+      - run: python3 scripts/validate.py
+      - run: python3 -m py_compile scripts/*.py
+      - run: npx -y @anthropic-ai/claude-code@2.1.237 plugin validate --strict .
+      - run: |
+          for package in claude-plugins/*; do
+            npx -y @anthropic-ai/claude-code@2.1.237 plugin validate --strict "$package"
+          done
+      - if: startsWith(github.ref, 'refs/tags/')
+        run: python3 scripts/validate.py --release --environment prod

@@ -1,0 +1,44 @@
+{
+  "name": "gigi-ads-agent",
+  "interface": {
+    "displayName": "Gigi-Ads-Agent"
+  },
+  "plugins": [
+    {
+      "name": "gigi-ads-agent",
+      "source": {
+        "source": "local",
+        "path": "./plugins/gigi-ads-agent"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "gigi-ads-agent-staging",
+      "source": {
+        "source": "local",
+        "path": "./plugins/gigi-ads-agent-staging"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "gigi-ads-agent-preprod",
+      "source": {
+        "source": "local",
+        "path": "./plugins/gigi-ads-agent-preprod"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

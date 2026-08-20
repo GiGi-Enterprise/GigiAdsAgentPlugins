@@ -1,0 +1,31 @@
+{
+  "name": "gigi-ads-agent-staging",
+  "version": "0.1.0",
+  "description": "Use the non-production Gigi staging environment from Codex.",
+  "author": {
+    "name": "GiGi Enterprise",
+    "url": "https://gigico.ai/"
+  },
+  "homepage": "https://gigico.ai/",
+  "license": "LicenseRef-Proprietary",
+  "keywords": ["advertising", "amazon-dsp", "campaigns", "gigi", "staging"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Gigi-Ads-Agent (Staging)",
+    "shortDescription": "Test Gigi advertising workflows in staging.",
+    "longDescription": "Access the isolated Gigi staging service for pre-release testing of tasks, feed cards, advertiser context, knowledge, metrics, and campaign intake.",
+    "developerName": "GiGi Enterprise",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "websiteURL": "https://gigico.ai/",
+    "privacyPolicyURL": "https://gigico.ai/privacy",
+    "termsOfServiceURL": "https://gigico.ai/terms",
+    "defaultPrompt": [
+      "Show my most important staging feed cards.",
+      "Chart staging spend and impressions for this advertiser.",
+      "Start a staging campaign intake draft."
+    ],
+    "brandColor": "#176B48"
+  },
+  "mcpServers": "./.mcp.json"
+}

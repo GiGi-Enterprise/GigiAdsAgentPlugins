@@ -1,0 +1,31 @@
+{
+  "name": "gigi-ads-agent",
+  "version": "0.1.0",
+  "description": "Use scoped Gigi advertising tasks, feed cards, metrics, context, knowledge, and campaign intake from Codex.",
+  "author": {
+    "name": "GiGi Enterprise",
+    "url": "https://gigico.ai/"
+  },
+  "homepage": "https://gigico.ai/",
+  "license": "LicenseRef-Proprietary",
+  "keywords": ["advertising", "amazon-dsp", "campaigns", "gigi"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Gigi-Ads-Agent",
+    "shortDescription": "Work with Gigi advertising data and workflows.",
+    "longDescription": "Access scoped Gigi tasks, feed cards, advertiser context, knowledge retrieval, metric trends, and campaign intake through Gigi's hosted MCP service.",
+    "developerName": "GiGi Enterprise",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "websiteURL": "https://gigico.ai/",
+    "privacyPolicyURL": "https://gigico.ai/privacy",
+    "termsOfServiceURL": "https://gigico.ai/terms",
+    "defaultPrompt": [
+      "Show my most important Gigi feed cards.",
+      "Chart spend and impressions for this advertiser.",
+      "Start a campaign intake draft."
+    ],
+    "brandColor": "#176B48"
+  },
+  "mcpServers": "./.mcp.json"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "gigi-ads-agent",
+  "displayName": "Gigi-Ads-Agent",
+  "version": "0.1.0",
+  "description": "Use scoped Gigi advertising tasks, feed cards, metrics, context, knowledge, and campaign intake from Claude Code.",
+  "author": {
+    "name": "GiGi Enterprise",
+    "url": "https://gigico.ai/"
+  },
+  "homepage": "https://gigico.ai/",
+  "license": "LicenseRef-Proprietary",
+  "keywords": ["advertising", "amazon-dsp", "campaigns", "gigi"],
+  "mcpServers": "./.mcp.json"
+}

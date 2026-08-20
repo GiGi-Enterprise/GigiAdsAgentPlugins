@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "gigi-ads-agent": {
+      "type": "http",
+      "url": "https://agent.gigico.tv/mcp"
+    }
+  }
+}
