@@ -2,8 +2,8 @@
   "staging": {
     "pluginId": "gigi-ads-agent-alpha",
     "displayName": "Gigi-Ads-Agent (Alpha)",
-    "mcp": "https://staging-agent.not-deployed.invalid/mcp",
-    "endpointStatus": "pending",
+    "mcp": "https://6g8ljo2iy3.execute-api.us-east-1.amazonaws.com/mcp",
+    "endpointStatus": "live",
     "distribution": ["github"],
     "marketplaceSubmission": false
   },
