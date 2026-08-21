@@ -10,8 +10,8 @@
   "preprod": {
     "pluginId": "gigi-ads-agent-beta",
     "displayName": "Gigi-Ads-Agent (Beta)",
-    "mcp": "https://preprod-agent.not-deployed.invalid/mcp",
-    "endpointStatus": "pending",
+    "mcp": "https://druh24p3c9.execute-api.us-east-1.amazonaws.com/mcp",
+    "endpointStatus": "live",
     "distribution": ["github"],
     "marketplaceSubmission": false
   },
