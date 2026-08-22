@@ -1,7 +1,7 @@
 {
   "name": "gigi-ads-agent",
   "displayName": "Gigi-Ads-Agent",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Use scoped Gigi advertising tasks, feed cards, metrics, context, knowledge, and campaign intake from Claude Code.",
   "author": {
     "name": "GiGi Enterprise",
