@@ -169,6 +169,18 @@ def validate(*, release: bool = False, environment: str = "prod") -> None:
         ).read_text(encoding="utf-8")
         assert codex_skill == claude_skill, f"{name}: host skill instructions drifted"
         assert f"name: {plugin_id}\n" in codex_skill
+        for required_guidance in (
+            "Treat requests as media-management goals, not API specifications.",
+            "Never ask whether the user wants legacy or V2.",
+            "list_legacy_metric_definitions",
+            "METRIC_NAMES_PER_DATASET",
+            "recommendedQueryTool",
+            "Do not stop after an irrelevant first page.",
+            "instead of silently changing it.",
+        ):
+            assert required_guidance in codex_skill, (
+                f"{name}: agency metric guidance is missing {required_guidance!r}"
+            )
 
     marketplace_plugin_ids = [
         EXPECTED["prod"]["pluginId"],
