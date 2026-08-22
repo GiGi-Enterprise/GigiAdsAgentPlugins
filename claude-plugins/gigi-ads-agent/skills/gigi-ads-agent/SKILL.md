@@ -31,12 +31,54 @@ context, knowledge, or campaign intake.
   source is needed; do not assume documents are embedded in the plugin.
 - Knowledge search results include source IDs and passages. Cite named sources
   and preserve advertiser and agency boundaries.
-- Before querying an unfamiliar metric, use `list_metric_definitions` to get
-  the exact metric name, supported time grains, and relevant dimensions.
 - Metric trend tools return structured rows and may also return an interactive
   chart. Summarize the rows when the host cannot render the optional view.
 - Do not imply that a tool mutates a DSP unless its published description
   explicitly says it does.
+
+## Working with agency users
+
+- Treat requests as media-management goals, not API specifications. Translate
+  phrases such as "show spend by campaign," "where does frequency stop
+  helping," or "compare new-to-brand performance" into metric discovery and
+  querying without asking the user to name a dataset, metric code, API
+  generation, or tool.
+- Never ask whether the user wants legacy or V2. Keep dataset names, metric
+  codes, and tool names internal unless they help explain a limitation or the
+  user asks for technical detail.
+- Load advertiser context before advertiser-specific analysis so configured
+  KPIs, attribution preferences, funnel definitions, and agency terminology
+  guide the query.
+- Ask a business-level clarification only when it would materially change the
+  answer, such as promoted-product versus total-brand sales, assisted versus
+  first-touch attribution, campaign versus advertiser scope, or whether weekly
+  data is acceptable when daily data is unavailable.
+- Report the advertiser or campaign scope, date range, time grain, and any
+  material attribution or sales-definition assumption. Present conclusions in
+  media-manager language.
+
+## Metric questions
+
+- For standard Amazon DSP delivery or performance questions, such as spend,
+  impressions, clicks, CPM, CTR, pacing, or campaign, line-item, and creative
+  trends, use `list_legacy_metric_definitions` to resolve the exact metric and
+  then use `display_metric_trend`.
+- For dataset-specific advanced measurement, such as path-to-conversion,
+  audience or funnel overlap, assisted attribution, frequency versus
+  conversion, NTB, CAC/LTV, ASIN cross-sell, or search-term analysis, use
+  `list_metric_definitions` progressively: discover `DATASETS` from the user's
+  business concept, inspect `METRIC_NAMES_PER_DATASET`, inspect
+  `DIMENSIONS_PER_DATASET`, and inspect the selected metric through `METRICS`.
+  Follow the returned `recommendedQueryTool`.
+- Do not route solely on the word AMC because standard legacy groups can
+  contain AMC-derived fields.
+- Do not stop after an irrelevant first page. Refine the business concept and
+  paginate discovery before concluding that a metric or dataset is
+  unavailable.
+- When the user asks for a trend, include a date grouping and choose a
+  supported daily, weekly, or monthly grain. If the requested grain is
+  unsupported, explain that clearly and offer the closest supported grain
+  instead of silently changing it.
 
 ## Useful sequences
 
