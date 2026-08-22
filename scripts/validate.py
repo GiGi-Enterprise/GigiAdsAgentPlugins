@@ -173,9 +173,14 @@ def validate(*, release: bool = False, environment: str = "prod") -> None:
             "Treat requests as media-management goals, not API specifications.",
             "Never ask whether the user wants legacy or V2.",
             "list_legacy_metric_definitions",
+            "list_advertisers.items[].advertiserId",
+            "list_deal_line_items",
+            "per-inventory-site-metrics",
+            "query_inventory_metrics",
             "METRIC_NAMES_PER_DATASET",
             "recommendedQueryTool",
-            "Do not stop after an irrelevant first page.",
+            "Do not stop after an irrelevant first page or a safely capped result.",
+            "inclusive advertiser-local reporting",
             "instead of silently changing it.",
         ):
             assert required_guidance in codex_skill, (
