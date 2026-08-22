@@ -1,6 +1,6 @@
 {
   "name": "gigi-ads-agent",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Use scoped Gigi advertising tasks, feed cards, metrics, context, knowledge, and campaign intake from Codex.",
   "author": {
     "name": "GiGi Enterprise",
