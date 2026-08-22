@@ -10,7 +10,9 @@ identify results and actions as **Beta (pre-prod)**, never production.
 
 ## Operating rules
 
-- Treat returned user, agency, and advertiser scope as authoritative.
+- Treat returned user, agency, and advertiser scope as authoritative. For every
+  advertiser-scoped tool, pass only `list_advertisers.items[].advertiserId`;
+  never pass another record ID.
 - Prefer a read or preview before a state-changing tool.
 - A task preview is a dry run; say so explicitly.
 - Confirm the exact feed card before archive, read, or feedback actions.
@@ -52,6 +54,11 @@ identify results and actions as **Beta (pre-prod)**, never production.
   impressions, clicks, CPM, CTR, pacing, or campaign, line-item, and creative
   trends, use `list_legacy_metric_definitions` to resolve the exact metric and
   then use `display_metric_trend`.
+- For deal, supply-source, placement, placement-size, or site reporting, use
+  `list_deals` when the user names a deal. Use
+  `list_deal_line_items` when associations matter. Discover exact fields from
+  `per-inventory-site-metrics`, then use `query_inventory_metrics`. Never
+  substitute campaign totals when inventory detail is unavailable.
 - For dataset-specific advanced measurement, such as path-to-conversion,
   audience or funnel overlap, assisted attribution, frequency versus
   conversion, NTB, CAC/LTV, ASIN cross-sell, or search-term analysis, use
@@ -61,10 +68,14 @@ identify results and actions as **Beta (pre-prod)**, never production.
   Follow the returned `recommendedQueryTool`.
 - Do not route solely on the word AMC because standard legacy groups can
   contain AMC-derived fields.
-- Do not stop after an irrelevant first page. Refine the business concept and
-  paginate discovery before concluding that a metric or dataset is
+- Do not stop after an irrelevant first page or a safely capped result. Follow
+  `nextOffset` or `nextToken` while `hasMore` is true, and refine the
+  business concept before concluding that a resource, metric, or dataset is
   unavailable.
 - When the user asks for a trend, include a date grouping and choose a
   supported daily, weekly, or monthly grain. If the requested grain is
   unsupported, explain that clearly and offer the closest supported grain
   instead of silently changing it.
+- Treat metric start and end dates as inclusive advertiser-local reporting
+  dates. Warn that recent or current dates may be incomplete; missing rows are
+  not zero and do not make the end date exclusive.
