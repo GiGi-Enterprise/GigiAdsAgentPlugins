@@ -58,7 +58,18 @@ and actions as **Alpha (staging)**, never production.
   `list_deals` when the user names a deal. Use
   `list_deal_line_items` when associations matter. Discover exact fields from
   `per-inventory-site-metrics`, then use `query_inventory_metrics`. Never
-  substitute campaign totals when inventory detail is unavailable.
+  substitute campaign totals when inventory detail is unavailable. Resolve the
+  requested campaign, line item, or deal first and pass its exact typed filter,
+  such as `filters=[{"lineItemId": "..."}]`. If
+  `limitHealth.limitReached` is true, the rows may be truncated and there is
+  no continuation token; refine the filters before ranking or calling the
+  result complete.
+- For named audience segments or targeted-versus-untargeted reporting,
+  discover exact fields from `per-audience-metrics`, then use
+  `query_audience_metrics`. Group by `segmentName` for readable labels and
+  use the typed `targetingMethod` values `targeted` or `untargeted`.
+  Continue using advanced V2 discovery for overlap, path-to-conversion, and
+  frequency-bucket questions.
 - For dataset-specific advanced measurement, such as path-to-conversion,
   audience or funnel overlap, assisted attribution, frequency versus
   conversion, NTB, CAC/LTV, ASIN cross-sell, or search-term analysis, use
@@ -73,9 +84,18 @@ and actions as **Alpha (staging)**, never production.
   business concept before concluding that a resource, metric, or dataset is
   unavailable.
 - When the user asks for a trend, include a date grouping and choose a
-  supported daily, weekly, or monthly grain. If the requested grain is
-  unsupported, explain that clearly and offer the closest supported grain
-  instead of silently changing it.
+  supported daily, weekly, or monthly grain. For legacy weekly or monthly
+  results, report that grain only when `granularityHealth.status` is
+  `MATCHED`. Otherwise retry daily for additive metrics. Never average rates
+  or ratios without their numerator and denominator. Explain and offer the
+  safe fallback instead of silently changing it.
+- Treat `orderBudget`, `lineItemBudget`, `lineItemBudgetCap`,
+  `inventoryOrderBudget`, and `inventoryLineItemBudget` as non-additive
+  observations, not pacing denominators. Use campaign flight budgets from
+  `list_campaigns` or line-item budgets from `list_line_items` for pacing.
+- When joining historical creative metrics to current creative metadata, use
+  only current 12-to-18-digit Amazon creative IDs. Disclose any synthetic
+  metric rollup IDs that `list_creatives` excludes; do not retry them.
 - Treat metric start and end dates as inclusive advertiser-local reporting
   dates. Warn that recent or current dates may be incomplete; missing rows are
   not zero and do not make the end date exclusive.
