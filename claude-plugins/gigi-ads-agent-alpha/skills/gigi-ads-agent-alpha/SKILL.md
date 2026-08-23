@@ -63,11 +63,16 @@ and actions as **Alpha (staging)**, never production.
   such as `filters=[{"lineItemId": "..."}]`. If
   `limitHealth.limitReached` is true, the rows may be truncated and there is
   no continuation token; refine the filters before ranking or calling the
-  result complete.
+  result complete. Inspect `dealIdentityHealth`: `NULL`, blank, and
+  `Unallocated` are reporting buckets, not canonical DSP deals. Never pass
+  those values to `list_deals`.
 - For named audience segments or targeted-versus-untargeted reporting,
   discover exact fields from `per-audience-metrics`, then use
   `query_audience_metrics`. Group by `segmentName` for readable labels and
   use the typed `targetingMethod` values `targeted` or `untargeted`.
+  If `limitHealth.limitReached` is true below `row_limit=1000`, retry first
+  with a larger row limit up to 1000; narrow typed filters only if it remains
+  capped.
   Continue using advanced V2 discovery for overlap, path-to-conversion, and
   frequency-bucket questions.
 - For dataset-specific advanced measurement, such as path-to-conversion,
@@ -76,7 +81,11 @@ and actions as **Alpha (staging)**, never production.
   `list_metric_definitions` progressively: discover `DATASETS` from the user's
   business concept, inspect `METRIC_NAMES_PER_DATASET`, inspect
   `DIMENSIONS_PER_DATASET`, and inspect the selected metric through `METRICS`.
-  Follow the returned `recommendedQueryTool`.
+  Follow the returned `recommendedQueryTool`. Before calling
+  `query_advanced_metrics`, copy one of the selected metric's advertised
+  `timeGrains` into the required `time_granularity` and use only returned
+  dimensions. Use the service's supported alternatives when a combination is
+  rejected; never silently switch the business request.
 - Do not route solely on the word AMC because standard legacy groups can
   contain AMC-derived fields.
 - Do not stop after an irrelevant first page or a safely capped result. Follow

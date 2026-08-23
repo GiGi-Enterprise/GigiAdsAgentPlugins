@@ -1,7 +1,7 @@
 {
   "name": "gigi-ads-agent-beta",
   "displayName": "Gigi-Ads-Agent (Beta)",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Verify scoped Gigi advertising workflows in the non-production Beta pre-prod environment.",
   "author": {
     "name": "GiGi Enterprise",
