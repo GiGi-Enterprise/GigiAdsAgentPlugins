@@ -8,6 +8,12 @@ description: Verify Gigi tasks, feed cards, metrics, advertiser context, knowled
 Use the Beta Gigi MCP tools for pre-prod release-candidate verification. Always
 identify results and actions as **Beta (pre-prod)**, never production.
 
+## Start each work session
+
+- Before using any other Gigi tool in a new work session, call
+  `start_here_get_gigi_guidance` once to load the current operating guide.
+  Follow that guide together with this skill's durable safety and scope rules.
+
 ## Operating rules
 
 - Treat returned user, agency, and advertiser scope as authoritative. For every
