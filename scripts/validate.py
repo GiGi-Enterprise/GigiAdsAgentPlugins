@@ -170,6 +170,7 @@ def validate(*, release: bool = False, environment: str = "prod") -> None:
         assert codex_skill == claude_skill, f"{name}: host skill instructions drifted"
         assert f"name: {plugin_id}\n" in codex_skill
         for required_guidance in (
+            "start_here_get_gigi_guidance",
             "Treat requests as media-management goals, not API specifications.",
             "Never ask whether the user wants legacy or V2.",
             "list_legacy_metric_definitions",

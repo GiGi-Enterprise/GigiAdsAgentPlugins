@@ -8,6 +8,12 @@ description: Test Gigi tasks, feed cards, metrics, advertiser context, knowledge
 Use the Alpha Gigi MCP tools for staging verification. Always identify results
 and actions as **Alpha (staging)**, never production.
 
+## Start each work session
+
+- Before using any other Gigi tool in a new work session, call
+  `start_here_get_gigi_guidance` once to load the current operating guide.
+  Follow that guide together with this skill's durable safety and scope rules.
+
 ## Operating rules
 
 - Treat returned user, agency, and advertiser scope as authoritative. For every
