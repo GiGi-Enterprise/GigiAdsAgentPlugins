@@ -1,7 +1,7 @@
 {
   "name": "gigi-ads-agent",
   "description": "Gigi-Ads-Agent plugins for advertising workflows in Claude Code.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "owner": {
     "name": "GiGi Enterprise",
     "url": "https://gigico.ai/"
@@ -12,7 +12,7 @@
       "displayName": "Gigi-Ads-Agent",
       "source": "./claude-plugins/gigi-ads-agent",
       "description": "Use Gigi advertising workflows from Claude Code.",
-      "version": "0.1.4",
+      "version": "0.1.5",
       "category": "business"
     },
     {
@@ -20,7 +20,7 @@
       "displayName": "Gigi-Ads-Agent (Alpha)",
       "source": "./claude-plugins/gigi-ads-agent-alpha",
       "description": "Test Gigi advertising workflows in Alpha/staging.",
-      "version": "0.1.4",
+      "version": "0.1.5",
       "category": "business"
     },
     {
@@ -28,7 +28,7 @@
       "displayName": "Gigi-Ads-Agent (Beta)",
       "source": "./claude-plugins/gigi-ads-agent-beta",
       "description": "Verify Gigi advertising workflows in Beta/pre-prod.",
-      "version": "0.1.4",
+      "version": "0.1.5",
       "category": "business"
     }
   ]

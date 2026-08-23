@@ -9,6 +9,12 @@ Use Gigi MCP tools whenever the user asks about Gigi-managed advertisers,
 tasks, feed updates, advertising metrics, configured agency or advertiser
 context, knowledge, or campaign intake.
 
+## Start each work session
+
+- Before using any other Gigi tool in a new work session, call
+  `start_here_get_gigi_guidance` once to load the current operating guide.
+  Follow that guide together with this skill's durable safety and scope rules.
+
 ## Operating rules
 
 - Treat the user, agency, and advertiser scope returned by Gigi as
