@@ -18,6 +18,11 @@ OAuth discovery. Users never copy or paste service tokens. Non-production
 endpoints remain deliberately non-routable until their API Gateways exist, so a
 Alpha or Beta package can never silently fall through to production.
 
+The production MCP service is live at <https://agent.gigico.tv/mcp>. Its
+current public surface is intentionally read-focused, making Gigi context and
+analysis available to external agents without enabling broad write or mutation
+capabilities by default.
+
 Only the production package is submitted to OpenAI or Claude. After OpenAI
 approval and publication, ChatGPT users install
 **Gigi-Ads-Agent** directly from the Plugins Directory. For an invited private

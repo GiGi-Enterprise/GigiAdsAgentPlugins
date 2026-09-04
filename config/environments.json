@@ -19,7 +19,7 @@
     "pluginId": "gigi-ads-agent",
     "displayName": "Gigi-Ads-Agent",
     "mcp": "https://agent.gigico.tv/mcp",
-    "endpointStatus": "planned",
+    "endpointStatus": "live",
     "distribution": ["github", "openai", "claude"],
     "marketplaceSubmission": true
   }
