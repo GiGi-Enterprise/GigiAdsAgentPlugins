@@ -27,6 +27,7 @@ EXPECTED = {
     "prod": {
         "pluginId": "gigi-ads-agent",
         "displayName": "Gigi-Ads-Agent",
+        "endpointStatus": "live",
         "marketplaceSubmission": True,
     },
 }
