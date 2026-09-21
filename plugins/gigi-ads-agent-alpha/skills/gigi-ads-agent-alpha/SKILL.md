@@ -60,6 +60,14 @@ and actions as **Alpha (staging)**, never production.
   impressions, clicks, CPM, CTR, pacing, or campaign, line-item, and creative
   trends, use `list_legacy_metric_definitions` to resolve the exact metric and
   then use `display_metric_trend`.
+- For Amazon native reach, use the exact `amazonCumulativeReach`,
+  `amazonCumulativeFrequencyAverage`, `amazonCumulativeHouseholdReach`,
+  `amazonCumulativeHouseholdFrequencyAverage`, or
+  `amazonDailyImpressionFrequencyAverage` field returned by discovery. Query
+  it daily at campaign or campaign + line-item grain. Each row is a snapshot
+  as of its date; never sum, average, or subtract across dates or entities,
+  describe it as selected-period reach, or treat null as zero. The older reach
+  and frequency fields are unchanged.
 - For deal, supply-source, placement, placement-size, or site reporting, use
   `list_deals` when the user names a deal. Use
   `list_deal_line_items` when associations matter. Discover exact fields from
@@ -92,6 +100,13 @@ and actions as **Alpha (staging)**, never production.
   `timeGrains` into the required `time_granularity` and use only returned
   dimensions. Use the service's supported alternatives when a combination is
   rejected; never silently switch the business request.
+- For AMC frequency-bucket results, preserve `date` plus the returned native
+  campaign + bucket, campaign + line item + bucket, or frequency group +
+  bucket grain. Users-in-bucket and assisted conversion events are non-additive
+  across reporting windows and entity grains. Never roll up line-item or
+  frequency-group rows. Use `lineItemLabel` or `frequencyGroupLabel`; stable
+  IDs remain authoritative, and frequency-group lookup includes inactive
+  groups for historical rows.
 - Do not route solely on the word AMC because standard legacy groups can
   contain AMC-derived fields.
 - Do not stop after an irrelevant first page or a safely capped result. Follow
@@ -111,6 +126,10 @@ and actions as **Alpha (staging)**, never production.
 - When joining historical creative metrics to current creative metadata, use
   only current 12-to-18-digit Amazon creative IDs. Disclose any synthetic
   metric rollup IDs that `list_creatives` excludes; do not retry them.
+- For line-item-scoped creative discovery, continue while `hasMore` is true
+  even when a page is empty. Preserve `dataHealth` and `lineItemIssues` in the
+  answer. On token rejection, restart without the token; on a query-limit
+  error, keep prior rows and narrow the line-item set or query.
 - Treat metric start and end dates as inclusive advertiser-local reporting
   dates. Warn that recent or current dates may be incomplete; missing rows are
   not zero and do not make the end date exclusive.
