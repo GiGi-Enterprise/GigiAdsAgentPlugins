@@ -130,6 +130,12 @@ and actions as **Alpha (staging)**, never production.
   even when a page is empty. Preserve `dataHealth` and `lineItemIssues` in the
   answer. On token rejection, restart without the token; on a query-limit
   error, keep prior rows and narrow the line-item set or query.
+- When `list_creatives.items[].usage` is present, treat it as a current
+  per-creative snapshot. `live` means the association is active and current,
+  its review passed, and its line item is delivering. If `complete` is false,
+  every count is a lower bound and zero does not prove no use. Never sum usage
+  across creatives to claim a unique line-item count. For a whole-library
+  query-limit error, keep prior rows and restart with a narrower query.
 - Treat metric start and end dates as inclusive advertiser-local reporting
   dates. Warn that recent or current dates may be incomplete; missing rows are
   not zero and do not make the end date exclusive.
